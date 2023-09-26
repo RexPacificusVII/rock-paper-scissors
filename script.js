@@ -104,7 +104,7 @@ function gameOver() {
     document.getElementById('scissors').disabled = true;
     document.getElementById('play').disabled = true;
 
-    const playerWon = [`${playerScore} - ${botScore}! Congratulations! You're the undisputed champion!`, `${playerScore} - ${botScore}! You've emerged victorious! You're the rock-paper-scissors master!`, `${playerScore} - ${botScore}! You've triumphed in epic fashion! The crown of victory is yours!`];
+    const playerWon = [`${playerScore} - ${botScore}! Congratulations, ${playerName}! You're the undisputed champion!`, `${playerScore} - ${botScore}! You've emerged victorious, ${playerName}! You're the rock-paper-scissors master!`, `${playerScore} - ${botScore}! You've triumphed in epic fashion, ${playerName}! The crown of victory is yours!`];
     const botWon = [`${playerScore} - ${botScore}! The computer reigns supreme! It's a valiant effort nonetheless.`, `${playerScore} - ${botScore}! The machines prevail! Can you stage a comeback next time?`, `${playerScore} - ${botScore}! A worthy challenge, but the computer takes the crown this time.`];
     const nobodyWon = [`${playerScore} - ${botScore}! It's a tie game! A duel of equals, well-fought!`, `${playerScore} - ${botScore}! No clear winner this time! The tension continues.`, `${playerScore} - ${botScore}! Neither side yields! It's a deadlock!`];
 
