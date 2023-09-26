@@ -10,9 +10,14 @@ body {
 
 .playerChoice {
     border: 1px solid transparent;
+    border-radius: 50%;
     background-color: transparent;
 }
 
-.playerChoice:hover {
-    box-shadow: 0px 0px 20px;
+/* .playerChoice:hover, #play:hover {
+    box-shadow: 0px 2px 5px;
+} */
+
+#play {
+    background-color: #92ffbb;
 }

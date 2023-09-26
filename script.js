@@ -1,4 +1,4 @@
-let playerChoice;
+let playerChoice = null;
 let bot;
 let playerScore = 0;
 let botScore = 0;
@@ -10,6 +10,10 @@ function playerSelect(choice) {
 }
 
 function rockPaperScissors() {
+    if (playerChoice === null) {
+        document.getElementById('message').innerHTML = `Make a selection first.`;
+        return;
+    }
     const choices = ["rock", "paper", "scissors"];
     bot = choices[Math.floor(Math.random() * 3)];
 
