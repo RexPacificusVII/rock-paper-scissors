@@ -4,7 +4,7 @@ let bot;
 let playerScore = 0;
 let botScore = 0;
 let draw = 0;
-let scoreLimit = 10;
+let gameLimit = 7;
 
 function startGame() {
     playerName = document.querySelector('#playerName').value;
@@ -12,8 +12,10 @@ function startGame() {
         alert(`Please enter your name`);
         return;
     }
+    gameLimit = parseInt(document.querySelector('#gameLimit').value);
     document.querySelector('#startScreen').style.display = 'none';
     document.querySelector('#playArea').style.display = 'block';
+    document.getElementById('playAreaTitle').innerHTML = `Rock Paper Scissors: Best of ${gameLimit}`;
     document.getElementById('player').innerHTML = playerName;
     document.getElementById('playerName2').innerHTML = playerName;
 }
@@ -90,5 +92,27 @@ function scores() {
     document.getElementById('playerScore').innerHTML = playerScore;
     document.getElementById('draw').innerHTML = draw;
     document.getElementById('botScore').innerHTML = botScore;
+    gameLimit--;
+    if (gameLimit === 0) {
+        gameOver();
+    }
 }
 
+function gameOver() {
+    document.getElementById('rock').disabled = true;
+    document.getElementById('paper').disabled = true;
+    document.getElementById('scissors').disabled = true;
+    document.getElementById('play').disabled = true;
+
+    const playerWon = [`${playerScore} - ${botScore}! Congratulations! You're the undisputed champion!`, `${playerScore} - ${botScore}! You've emerged victorious! You're the rock-paper-scissors master!`, `${playerScore} - ${botScore}! You've triumphed in epic fashion! The crown of victory is yours!`];
+    const botWon = [`${playerScore} - ${botScore}! The computer reigns supreme! It's a valiant effort nonetheless.`, `${playerScore} - ${botScore}! The machines prevail! Can you stage a comeback next time?`, `${playerScore} - ${botScore}! A worthy challenge, but the computer takes the crown this time.`];
+    const nobodyWon = [`${playerScore} - ${botScore}! It's a tie game! A duel of equals, well-fought!`, `${playerScore} - ${botScore}! No clear winner this time! The tension continues.`, `${playerScore} - ${botScore}! Neither side yields! It's a deadlock!`];
+
+    if (playerScore > botScore) {
+        document.getElementById('message').innerHTML = playerWon[Math.floor(Math.random() * 3)];
+    } else if (playerScore < botScore) {
+        document.getElementById('message').innerHTML = botWon[Math.floor(Math.random() * 3)];
+    } else {
+        document.getElementById('message').innerHTML = nobodyWon[Math.floor(Math.random() * 3)];
+    }
+}

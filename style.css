@@ -19,11 +19,24 @@ body {
     background-color: transparent;
 }
 
-#startGame, #play {
+#startGame {
     background-color: #92ffbb;
 }
 
-#playerName {
+#play {
+    background-color: #98ffef;
+}
+
+#restart {
+    background-color: #c4ffb9;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#playerName, #gameLimit {
     font-size: 2rem;
 }
 

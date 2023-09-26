@@ -18,20 +18,22 @@
         <div class="container vh-100 d-flex flex-column text-center justify-content-center align-items-center">
             <h1 class="mb-4">Welcome to Rock Paper Scissors</h1>
             <div class="d-flex justify-content-center mb-4 gap-5">
-                <img src="./assets/rock.svg">
-                <img src="./assets/paper.svg">
-                <img src="./assets/scissors.svg">
+                <img class="img-fluid object-fit-fill" src="./assets/rock.svg">
+                <img class="img-fluid object-fit-fill" src="./assets/paper.svg">
+                <img class="img-fluid object-fit-fill" src="./assets/scissors.svg">
             </div>
-            <form class=form-grp>
-                <input id="playerName" type="text" class="mb-4 w-75 rounded-2 text-center" placeholder="Enter your name">
-                
-            </form>
+            <div class="row gap-2">
+                <div class="col"></div>
+                <input id="playerName" type="text" class="col mb-4 rounded-2 text-center" placeholder="Enter your name">
+                <input id="gameLimit" type="number" class="col mb-4 rounded-2 text-center" placeholder="No. of games" min="1" value="7">
+                <div class="col"></div>
+            </div>
             <button id="startGame" class="bx-1 btn shadow w-50" onclick="startGame()"><h4 class="m-0 px-4 py-2">Start Game</h4></button>
         </div>
     </div>
     <div id="playArea">
         <div class="container vh-100 text-center d-flex flex-column text-center justify-content-center">
-            <h1 class="m-5">Rock Paper Scissors</h1>
+            <h1 id="playAreaTitle" class="m-5">Rock Paper Scissors</h1>
             <div class="row">
                 <div class="col">
                     <h4 id="player">Player</h4>
@@ -49,11 +51,11 @@
             <div class="row mb-4">
                 <div class="col"></div>
                 <div class="col d-flex flex-column align-items-center">
-                    <img id="playerMove" class="mb-3" src="./assets/placeholder.svg">
+                    <img id="playerMove" class="mb-3 img-fluid" src="./assets/placeholder.svg">
                     <h6 id="playerName2">Player</h6>
                 </div>
                 <div class="col">
-                    <img id="botMove" class="mb-3" src="./assets/placeholder.svg">
+                    <img id="botMove" class="mb-3 img-fluid" src="./assets/placeholder.svg">
                     <h6>Computer</h6>
                 </div>
                 <div class="col"></div>
@@ -72,7 +74,10 @@
                     <button id="scissors" class="playerChoice btn shadow p-0" onclick="playerSelect('scissors')"><img src="./assets/scissors.svg" class="img-fluid"></button>
                 </div>
             </div>
-            <button id="play" class="m-5 bx-1 btn shadow" onclick="rockPaperScissors()"><h4 class="m-0 px-4 py-2">Play</h4></button>
+            <div class="btn-group">
+                <button id="play" class="m-5 bx-1 btn shadow" onclick="rockPaperScissors()"><h4 class="m-0 px-4 py-2">Play</h4></button>
+                <a href="./index.html"><button id="restart" class="m-5 bx-1 btn shadow"><h4 class="m-0 px-4 py-2">Restart</h4></button></a>
+            </div>
         </div>
     </div>
     <!-- BOOTSTRAP -->
