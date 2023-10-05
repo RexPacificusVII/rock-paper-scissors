@@ -15,7 +15,7 @@ function startGame() {
     gameLimit = parseInt(document.querySelector('#gameLimit').value);
     document.querySelector('#startScreen').style.display = 'none';
     document.querySelector('#playArea').style.display = 'block';
-    document.getElementById('playAreaTitle').innerHTML = `Rock Paper Scissors: Best of ${gameLimit}`;
+    document.getElementById('playAreaTitle').innerHTML = `Rock-Paper-Scissors: Best of ${gameLimit}`;
     document.getElementById('player').innerHTML = playerName;
     document.getElementById('playerName2').innerHTML = playerName;
 }
